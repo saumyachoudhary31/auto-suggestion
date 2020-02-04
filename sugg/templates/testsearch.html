@@ -1,0 +1,17 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script> 
+    </head>
+    <div class="ui-widget">
+      <label for="search"> Search </label>
+      <input id="search">
+    </div>
+    <script type="text/javascript">
+        $(function() {
+          $("#search").autocomplete({
+            source: "{% url 'ajax_load_project' %}",
+            minLength: 2,
+          });
+        });
+        </script>
